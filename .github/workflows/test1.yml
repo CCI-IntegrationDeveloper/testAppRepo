@@ -1,0 +1,18 @@
+name: Test Checkout Logic
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test_checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout App Properties Repository
+        uses: actions/checkout@v4
+        with:
+          repository: CCI-IntegrationDeveloper/app-proprties-checkout
+          path: Test
+
+      - name: Print Success Message
+        run: |
+          echo "App Properties Repository has been checked out successfully!"
